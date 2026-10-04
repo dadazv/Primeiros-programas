@@ -1,0 +1,18 @@
+algoritmo "vagas"
+var
+  vagas,carros:inteiro
+inicio
+  escreval("Digite o total de vagas: ")
+  leia(vagas)
+  escreval("Digite o total de carros: ")
+  leia(carros)
+  se carros > vagas entao
+    escreval("ERRO: Acima da capacidade.")
+  fimse
+  se carros < vagas entao
+    escreval("VAGAS DISPONIVEIS.")
+  fimse
+  se carros = vagas entao
+    escreval("ESTACIONAMENTO LOTADO")
+  fimse
+fimalgoritmo

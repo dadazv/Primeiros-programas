@@ -1,0 +1,13 @@
+algoritmo "senha do usuario"
+var
+  senha:caracter
+inicio
+  repita
+    escreval("Digite sua senha: ")
+    leia(senha)
+    se senha <> "admin" entao
+      escreval("Senha incorreta.")
+    fimse
+  ate senha = "admin"
+  escreval("Acesso permitido")
+fimalgoritmo

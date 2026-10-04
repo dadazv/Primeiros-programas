@@ -1,0 +1,14 @@
+algoritmo "maiornota"
+var
+  nota,Mnota,i:real
+inicio
+  Mnota <- 0
+  para i de 1 ate 5 faca
+    escreval("Digite sua nota: ")
+    leia(nota)
+    se nota > Mnota entao
+      Mnota <- nota
+    fimse
+  fimpara
+  escreval("A maior nota foi:",Mnota)
+fimalgoritmo

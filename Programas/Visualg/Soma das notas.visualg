@@ -1,0 +1,12 @@
+algoritmo "soma"
+var
+  num,soma:inteiro
+inicio
+  soma <- 0
+  repita
+    escreval("Digite um número: ")
+    leia(num)
+    soma <- soma + num
+  ate num = 0
+  escreval("O total foi: ",soma)
+fimalgoritmo

@@ -1,0 +1,66 @@
+algoritmo "VOTA"
+var
+  candA,candB,candC,votos,votosIN,opc:inteiro
+inicio
+  votosIN <- 0
+  votos <- 0
+  candA <- 0
+  candB <- 0
+  candC <- 0
+  repita
+    escreval("VOTAÇÃO 2026")
+    escreval("1-Candidato A 2-Candidato B 3-Candidato C 0-Terminar votação")
+    leia(opc)
+    se (opc > 3) ou (opc < 0) entao
+      escreval("Voto inválido.")
+      votosIN <- votosIN + 1
+    senao
+      se opc = 1 entao
+        candA <- candA + 1
+        votos <- votos + 1
+      senao
+        se opc = 2 entao
+          candB <- candB + 1
+          votos <- votos + 1
+        senao
+          se opc = 3 entao
+            candC <- candC + 1
+            votos <- votos + 1
+          fimse
+        fimse
+      fimse
+    fimse
+  ate opc = 0
+  escreval("Candidato A: ",candA)
+  escreval("Candidato B: ",candB)
+  escreval("Candidato C: ",candC)
+  escreval("Total de votos: ",votos)
+  escreval("Total de votos inválidos: ",votosIN)
+  se candA > candB e candA > candC entao
+    escreval("Vencedor: A")
+  senao
+    se candB > candA e candB > candC entao
+      escreval("Vencedor: B")
+    senao
+      se candC > candA e candC > candB entao
+        escreval("Vencedor: C")
+      senao
+        se candA = candB e candA = candC entao
+          escreval("Empate entre: A, B e C")
+        senao
+          se candA = candB entao
+            escreval("Empate entre: A e B")
+          senao
+            se candA = candC entao
+              escreval("Empate entre: A e C")
+            senao
+              se candB = candC entao
+                escreval("Empate entre: B e C")
+              fimse
+            fimse
+          fimse
+        fimse
+      fimse
+    fimse
+  fimse
+fimalgoritmo

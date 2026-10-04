@@ -1,0 +1,12 @@
+algoritmo "notas"
+var
+  i,nota,media,soma:real
+inicio
+  para i de 1 ate 5 faca
+    escreval("Digite sua nota: ")
+    leia(nota)
+    soma <- soma + nota
+  fimpara
+  media <- soma/5
+  escreval("A média foi: ",media)
+fimalgoritmo

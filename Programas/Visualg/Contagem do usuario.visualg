@@ -1,0 +1,10 @@
+algoritmo "contagem"
+var
+  num:inteiro
+inicio
+  num <- 0
+  repita
+    escreval(num)
+    num <- num + 1
+  ate num = 11
+fimalgoritmo

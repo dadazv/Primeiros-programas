@@ -1,0 +1,15 @@
+algoritmo "parcela"
+var
+  parc,sal,porc:real
+inicio
+  escreval("Digite seu salário: ")
+  leia(sal)
+  escreval("Digite o valor da parcela: ")
+  leia(parc)
+  porc <- sal * 0.30
+  se parc < porc entao
+    escreval("Empréstimo permitido.")
+  senao
+    escreval("Empréstimo negado.")
+  fimse
+fimalgoritmo

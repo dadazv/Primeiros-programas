@@ -1,0 +1,13 @@
+algoritmo "papagaio"
+var
+  quant,i:inteiro
+  nome:caracter
+inicio
+  escreval("Digite seu nome: ")
+  leia(nome)
+  escreval("Digite um número: ")
+  leia(quant)
+  para i de 1 ate quant faca
+    escreval(nome)
+  fimpara
+fimalgoritmo

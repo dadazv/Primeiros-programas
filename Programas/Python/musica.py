@@ -1,0 +1,18 @@
+import time
+
+time.sleep(0)
+print("===Lonely Day===")
+time.sleep(1.5)
+print("And if you go...")
+time.sleep(2.8)
+print("I wanna go with you.")
+time.sleep(2.9)
+print("And if you die...")
+time.sleep(3.9)
+print("I wanna die with you.")
+time.sleep(2.9)
+print("Take your hand...")
+time.sleep(3)
+print("And walk away.")
+time.sleep(3)
+print("Cabousse")

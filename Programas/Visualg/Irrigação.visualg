@@ -1,0 +1,19 @@
+algoritmo "irrigaçao"
+var
+  umid:inteiro
+  chuva:caractere
+inicio
+  escreval("Digite a umidade do solo: ")
+  leia(umid)
+  escreval("Haverá chuva?s/n")
+  leia(chuva)
+  se umid < 40 e chuva = "n" entao
+    escreval("Irricação Ativada.")
+  fimse
+  se umid < 40 e chuva = "s" entao
+    escreval("Irrigaçao Suspensa - Previsão de Chuva.")
+  fimse
+  se umid >= 40 entao
+    escreval("Solo úmido - Irrigação Desligada.")
+  fimse
+fimalgoritmo

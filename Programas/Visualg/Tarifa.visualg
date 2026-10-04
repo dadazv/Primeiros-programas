@@ -1,0 +1,16 @@
+algoritmo "tarifa"
+var
+  KWH:inteiro
+inicio
+  escreval("Digite seu consumo: ")
+  leia(KWH)
+  se KWH <= 150 entao
+    escreval("O preço é: R$ ",KWH * 0.40)
+  fimse
+  se KWH > 150 e KWH < 500 entao
+    escreval("O preço é: R$",KWH * 0.65)
+  fimse
+  se KWH >= 500 entao
+    escreval("O preço é: R$",KWH * 0.90)
+  fimse
+fimalgoritmo

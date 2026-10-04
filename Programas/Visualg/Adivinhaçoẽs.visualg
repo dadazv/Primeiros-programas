@@ -1,0 +1,149 @@
+algoritmo "Jogo de adivinhar"
+var
+  lim,nSEC,nMAX,nMIN,palp,tent,pont,Ttent,Tpart,Mpont,vit,der,opc:inteiro
+  jogoNV:caractere
+inicio
+  Ttent <- 0
+  Tpart <- 0
+  Mpont <- 0
+  vit <- 0
+  der <- 0
+  pont <- 0
+  repita
+    escreval("1-Fácil, 1 a 20, 8 tentativas. 2-Médio, 1 a 50, 6 tentativas. 3-Dificil, 1 a 100, 5 tentativas. 0-Sair.")
+    leia(opc)
+    se (opc > 3) ou (opc < 0) entao
+      escreval("Opção inválida")
+    senao
+      se opc = 1 entao
+        jogoNV <- "s"
+        nSEC <- 10
+        nMAX <- 20
+        nMIN <- 1
+        tent <- 8
+        lim <- 8
+        repita
+          Tpart <- Tpart + 1
+          escreval("Adivinhe o número: ")
+          leia(palp)
+          tent <- tent - 1
+          se palp > nMAX entao
+            escreval("Palpite muito alto.")
+          senao
+            se palp < nMIN entao
+              escreval("Palpite muito baixo.")
+            senao
+              se palp < nSEC entao
+                escreval("O palpite é menor.")
+              senao
+                se palp > nSEC entao
+                  escreval("O palpite é maior.")
+                fimse
+              fimse
+            fimse
+          fimse
+        ate (tent = 0) ou (palp = nSEC)
+        se tent = 0 entao
+          escreval("Jogo perdido!")
+          der <- der + 1
+        senao
+          escreval("Jogo ganhado!")
+          vit <- vit + 1
+          pont <- tent * 100
+          se pont > Mpont entao
+            Mpont <- pont
+          fimse
+        fimse
+      senao
+        se opc = 2 entao
+          jogoNV <- "s"
+          nSEC <- 15
+          nMAX <- 50
+          nMIN <- 1
+          tent <- 6
+          lim <- 6
+          repita
+            Tpart <- Tpart + 1
+            escreval("Adivinhe o número: ")
+            leia(palp)
+            tent <- tent - 1
+            se palp > nMAX entao
+              escreval("Palpite muito alto.")
+            senao
+              se palp < nMIN entao
+                escreval("Palpite muito baixo.")
+              senao
+                se palp < nSEC entao
+                  escreval("O palpite é menor.")
+                senao
+                  se palp > nSEC entao
+                    escreval("O palpite é maior.")
+                  fimse
+                fimse
+              fimse
+            fimse
+          ate (tent = 0) ou (palp = nSEC)
+          se tent = 0 entao
+            escreval("Jogo perdido!")
+            der <- der + 1
+          senao
+            escreval("Jogo ganhado!")
+            vit <- vit + 1
+            pont <- tent * 100
+            se pont > Mpont entao
+              Mpont <- pont
+            fimse
+          fimse
+        senao
+          se opc = 3 entao
+            jogoNV <- "s"
+            nSEC <- 20
+            nMAX <- 100
+            nMIN <- 1
+            tent <- 5
+            lim <- 5
+            repita
+              Tpart <- Tpart + 1
+              escreval("Adivinhe o número: ")
+              leia(palp)
+              tent <- tent - 1
+              se palp > nMAX entao
+                escreval("Palpite muito alto.")
+              senao
+                se palp < nMIN entao
+                  escreval("Palpite muito baixo.")
+                senao
+                  se palp < nSEC entao
+                    escreval("O palpite é menor.")
+                  senao
+                    se palp > nSEC entao
+                      escreval("O palpite é maior.")
+                    fimse
+                  fimse
+                fimse
+              fimse
+            ate (tent = 0) ou (palp = nSEC)
+            se tent = 0 entao
+              escreval("Jogo perdido!")
+              der <- der + 1
+            senao
+              escreval("Jogo ganhado!")
+              vit <- vit + 1
+              pont <- tent * 100
+              se pont > Mpont entao
+                Mpont <- pont
+              fimse
+            fimse
+          fimse
+        fimse
+      fimse
+    fimse
+  ate (jogoNV = "n") ou (opc = 0)
+  se opc = 0 entao
+  escreval("Quantidades de partidas jogadas: ",Tpart)
+  escreval("Quantidades de vitórias:",vit)
+  escreval("Quantidades de derrotas: ",der)
+  escreval("Maior pontuação obtida:",Mpont)
+  escreval("Percentual de vitórias: ",(vit * 100)/Tpart,"%")
+  fimse
+fimalgoritmo
