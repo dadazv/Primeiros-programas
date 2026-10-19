@@ -1,0 +1,13 @@
+algoritmo "validaçao"
+var
+  preco:real
+inicio
+  escreval("Digite o preço: ")
+  leia(preco)
+  enquanto(preco <= 0)faca
+    escreval("Preço inválido.")
+    escreval("Digite o preço: ")
+    leia(preco)
+  fimenquanto
+  escreval("Preço aceito.")
+fimalgoritmo

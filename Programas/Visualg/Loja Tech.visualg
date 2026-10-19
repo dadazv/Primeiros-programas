@@ -1,0 +1,168 @@
+algoritmo "Loja Tech"
+var
+  preU,des,pre,sub,pcs,urg,urgU,cod,pag,dpag,linux:real
+  nom:caractere
+inicio
+  preU <- 0
+  des <- 0
+  pre <- 0
+  sub <- 0
+  urgU <- 0
+  dpag <- 0
+  escreval("=== Loja Tech ===")
+  escreval("Digite seu nome: ")
+  leia(nom)
+  limpatela
+  escreval("Seja bom vindo, ",nom,"!")
+  escreval("# 1- Formatação de PC")
+  escreval("# 2- Limpeza preventina")
+  escreval("# 3- Instalação de software")
+  escreval("# 4- Upgrade de memória")
+  escreval("# 5- Diagnóstico técnico")
+  escreval("Digite o código do serviço: ")
+  leia(cod)
+  escreval("Digite a quantidade: ")
+  leia(pcs)
+  escreval("Serviço urgente? ")
+  escreval("# 1- Sim")
+  escreval("# 2- Não")
+  leia(urg)
+
+  se(pcs <= 0)entao
+    escreval("Quantidade inválida.")
+  senao
+    se(urg > 2 ou urg < 1)entao
+      escreval("Opção de urgência inválida.")
+    senao
+      escolha(cod)
+        caso 1
+          preU <- 120
+          sub <- pcs * preU
+          se(pcs >= 3)entao
+            des <- sub * 0.10
+          senao
+            des <- 0
+          fimse
+          pre <- sub - des
+          se(urg = 1)entao
+            urgU <- 30
+            pre <- pre + urgU
+          senao
+            urgU <- 0
+          fimse
+          pre <- (sub - des) + urgU
+        caso 2
+          preU <- 80
+          sub <- pcs * preU
+          se(pcs >= 4)entao
+            des <- sub * 0.15
+          senao
+            des <- 0
+          fimse
+          pre <- sub - des
+          se(urg = 1)entao
+            urgU <- 30
+            pre <- pre + urgU
+          senao
+            urgU <- 0
+          fimse
+          pre <- (sub - des) + urgU
+        caso 3
+          escreval("Linux ou Windows? ")
+          escreval("# 1- Linux")
+          escreval("# 2- WIndows")
+          leia(linux)
+          escolha(linux)
+            caso 1
+              escreval("Aí sim!")
+            caso 2
+              escreval("Ah, Windows...")
+            outrocaso
+              escreval("Ok.")
+          fimescolha
+          preU <- 50
+          sub <- pcs * preU
+          se(pcs >= 5)entao
+            des <- sub * 0.20
+          senao
+            des <- 0
+          fimse
+          pre <- sub - des
+          se(urg = 1)entao
+            urgU <- 30
+            pre <- pre + urgU
+          senao
+            urgU <- 0
+          fimse
+          pre <- (sub - des) + urgU
+        caso 4
+          preU <- 100
+          sub <- pcs * preU
+          se(pcs >= 2)entao
+            des <- sub * 0.05
+          senao
+            des <- 0
+          fimse
+          pre <- sub - des
+          se(urg = 1)entao
+            urgU <- 30
+            pre <- pre + urgU
+          senao
+            urgU <- 0
+          fimse
+          pre <- (sub - des) + urgU
+        caso 5
+          preU <- 40
+          sub <- pcs * preU
+          se(pcs >= 3)entao
+            des <- 0
+          senao
+            des <- 0
+          fimse
+          pre <- sub - des
+          se(urg = 1)entao
+            urgU <- 30
+            pre <- pre + urgU
+          senao
+            urgU <- 0
+          fimse
+          pre <- (sub - des) + urgU
+        outrocaso
+          escreval("Serviço inválido.")
+      fimescolha
+
+      se(cod >= 1 e cod <= 5)entao
+        limpatela
+        escreval("Digite a forma de pagamento: ")
+        escreval("# 1- Pix")
+        escreval("# 2- Cartão")
+        leia(pag)
+
+        se(pag < 1 ou pag > 2)entao
+          escreval("Forma de pagamento inválida.")
+        senao
+          escolha(pag)
+            caso 1
+              dpag <- pre * 0.05
+              pre <- pre - dpag
+            caso 2
+              dpag <- 0
+              pre <- pre - dpag
+          fimescolha
+          limpatela
+          escreval("=== Orçamento ===")
+          escreval("Cliente: ",nom)
+          escreval("Serviço escolhido: ",cod)
+          escreval("Quantidade de equipamentos: ",pcs)
+          escreval("Preço por equipamentos: ",preU)
+          escreval("Subtotal: ",sub)
+          escreval("Desconto por quantidade: ",des)
+          escreval("Acréscimo por urgência: ",urgU)
+          escreval("Desconto por pagamento: ",dpag)
+          escreval("Valor final: ",pre)
+          escreval("=================")
+        fimse
+      fimse
+    fimse
+  fimse
+fimalgoritmo

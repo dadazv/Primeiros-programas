@@ -1,0 +1,24 @@
+algoritmo "codigo"
+var
+  cod:vetor[1..5] de inteiro
+  i,con,codNovo:inteiro
+  erro:logico
+inicio
+  i <- 1
+  enquanto(i <= 5)faca
+    escreval("Digite o ",i," código: ")
+    leia(codNovo)
+    erro <- falso
+
+    para con de 1 ate i - 1 faca
+      se(cod[con] = codNovo)entao
+        escreval("Código inválido.")
+        erro <- verdadeiro
+      fimse
+    fimpara
+    se erro = falso entao
+      cod[i] <- codNovo
+      i <- i + 1
+    fimse
+  fimenquanto
+fimalgoritmo

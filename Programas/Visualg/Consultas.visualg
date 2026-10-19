@@ -1,0 +1,38 @@
+algoritmo "consulta"
+var
+  nome:vetor[1..3] de caractere
+  cod:vetor[1..3] de inteiro
+  i:inteiro
+  Tnome:caractere
+  Tcod:inteiro
+inicio
+  nome[1] <- "Pão com queijo"
+  nome[2] <- "Macarrão"
+  nome[3] <- "Coxinha"
+
+  cod[1] <- 1
+  cod[2] <- 2
+  cod[3] <- 3
+  
+  i <- 1
+
+  para i de 1 ate 3 faca
+    repita
+      escreval("Digite o nome do produto: ")
+      leia(Tnome)
+      se(Tnome <> nome[i])entao
+        escreval("Nome incorreto.")
+      fimse
+    ate Tnome = nome[i]
+
+    repita
+      escreval("Digite o código do produto: ")
+      leia(Tcod)
+      se(Tcod <> cod[i])entao
+        escreval("Código incorreto.")
+      fimse
+    ate Tcod = cod[i]
+    escreval("Nome: ",nome[i])
+    escreval("Código: ",cod[i])
+  fimpara
+fimalgoritmo      

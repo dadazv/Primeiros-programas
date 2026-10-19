@@ -1,0 +1,21 @@
+algoritmo "Estoque"
+var
+  est:inteiro
+  qtd:inteiro
+inicio
+  est <- 10
+  repita
+    escreval("Digite a demanda: ")
+    leia(qtd)
+    se(qtd > est)entao
+      escreval("Sem estoque.")
+    senao
+      se(est <= 5)entao
+        escreva("Estoque acabando...")
+      fimse
+      escreval("Compra efetuada.")
+      est <- est - qtd
+    fimse
+  ate(est = 0)
+  escreval("Fim de estoque.")
+fimalgoritmo
